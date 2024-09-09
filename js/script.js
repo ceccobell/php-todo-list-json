@@ -5,6 +5,7 @@ createApp({
         return {
             todoList: [],
             url: "server.php",
+            newTodo: "",
         }
     },
     methods: {
@@ -13,6 +14,16 @@ createApp({
                 console.log(resp.data)
                 this.todoList = resp.data
             })
+        },
+        addToDo() {
+            if (this.newTodo.trim() != "") {
+                this.todoList.push({
+                    id: this.todoList.length + 1,
+                    done: false,
+                    name: this.newTodo.trim(),
+                })
+                this.newTodo = null
+            }
         },
     },
     mounted() {

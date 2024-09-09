@@ -36,8 +36,8 @@
                         </li>
                     </ul>
                     <div class=" d-flex mt-3">
-                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="inserisci ToDo">
-                        <button class="btn btn-primary ms-3 px-3 fs-4">+</button>
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="inserisci ToDo" v-model="newTodo" @keyup.enter="addToDo()">
+                        <button class="btn btn-primary ms-3 px-3 fs-4" @click="addToDo()">+</button>
                     </div> 
                 </div>
             </div>
